@@ -1,6 +1,13 @@
 version: '3.7'
 services:
-  hapi-template:
+  dapr-receiver:
     build: .
-    image: hapi-template
-    container_name: hapi-template
+    image: dapr-receiver
+    container_name: dapr-receiver
+    environment:
+      AZURE_SERVICE_BUS_HOST: ${AZURE_SERVICE_BUS_HOST}
+      AZURE_SERVICE_BUS_USERNAME: ${AZURE_SERVICE_BUS_USERNAME}
+      AZURE_SERVICE_BUS_PASSWORD: ${AZURE_SERVICE_BUS_PASSWORD}
+      AZURE_SERVICE_BUS_QUEUE: ${AZURE_SERVICE_BUS_QUEUE}
+      AZURE_SERVICE_BUS_TOPIC: ${AZURE_SERVICE_BUS_TOPIC}
+      AZURE_SERVICE_BUS_SUBSCRIPTION: ${AZURE_SERVICE_BUS_SUBSCRIPTION}
