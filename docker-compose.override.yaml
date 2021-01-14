@@ -4,7 +4,10 @@ services:
     build:
       context: .
       target: development
+    environment:
+      PORT: 3001
     ports:
+      - "3001:3001"
       - "9230:9229"
     volumes:
       - ./app/:/home/node/app/
@@ -16,9 +19,8 @@ services:
   dapr-sender-dapr:
     image: "daprio/daprd:edge"
     command: ["./daprd",
-     "-app-id", "dapr-receiver",
-     "-placement-host-address", "placement:50006",
-     "-dapr-grpc-port", "50002",
+     "-app-id", "daprreceiver",
+     "-app-port", "3001",
      "-components-path", "/components"]
     volumes:
         - "./dapr/components/:/components"
