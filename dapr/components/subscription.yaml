@@ -5,6 +5,6 @@ metadata:
 spec:
   topic: message
   route: /message
-  pubsubname: pubsub
+  pubsubname: pubsub-asb
 scopes:
 - daprreceiver
