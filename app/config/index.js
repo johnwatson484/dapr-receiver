@@ -2,22 +2,7 @@
 const config = {
   port: process.env.PORT,
   env: process.env.NODE_ENV,
-  appName: 'Dapr Sender',
-  queueConfig: {
-    host: process.env.AZURE_SERVICE_BUS_HOST,
-    username: process.env.AZURE_SERVICE_BUS_USERNAME,
-    password: process.env.AZURE_SERVICE_BUS_PASSWORD,
-    address: process.env.AZURE_SERVICE_BUS_QUEUE,
-    type: 'queue'
-  },
-  subscriptionConfig: {
-    host: process.env.AZURE_SERVICE_BUS_HOST,
-    username: process.env.AZURE_SERVICE_BUS_USERNAME,
-    password: process.env.AZURE_SERVICE_BUS_PASSWORD,
-    address: process.env.AZURE_SERVICE_BUS_SUBSCRIPTION,
-    topic: process.env.AZURE_SERVICE_BUS_TOPIC,
-    type: 'subscription'
-  }
+  appName: 'Dapr Receiver'
 }
 
 module.exports = config
